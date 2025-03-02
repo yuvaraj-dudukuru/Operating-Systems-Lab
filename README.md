@@ -133,9 +133,9 @@ We welcome contributions! Follow these steps:
 ---
 
 ## ⚡ Author
-👤 **[Your Name]**  
-📧 Email: your.email@example.com  
-🔗 LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+👤 **[Dudukuru Yuvaraj]**  
+📧 Email: dudukuruyuvaraj55@gmail.com  
+🔗 LinkedIn: [Your Profile](https://www.linkedin.com/in/yuvaraj-dudukuru/)
 
 ---
 
