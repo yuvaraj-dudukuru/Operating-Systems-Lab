@@ -128,7 +128,7 @@ We welcome contributions! Follow these steps:
 ---
 
 ## ⚡ Author
-👤 **[Your Name]**  
+👤 **[Yuvaraj]**  
 📧 Email: dudukuruyuvaraj55@gmail.com  
 🔗 LinkedIn: [Yuvaraj](https://linkedin.com/in/yuvaraj-dudukuru)
 
