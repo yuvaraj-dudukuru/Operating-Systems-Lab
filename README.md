@@ -1,9 +1,9 @@
 # Operating Systems Lab - GitHub Repository
 
 ## 📌 Introduction
-Welcome to the **Operating Systems Lab** repository! This repository contains **C and C++ programs** that demonstrate various fundamental **operating system concepts**, including process synchronization, scheduling, memory management, file systems, and inter-process communication.
+Welcome to the **Operating Systems Lab** repository! This repository contains **C programs** that demonstrate fundamental **operating system concepts**, as per the R22 B.Tech. AI & DS syllabus at JNTU Hyderabad. The lab covers **CPU scheduling, deadlock management, file and memory management, and inter-process communication**.
 
-Each program is well-documented and tested to help students and developers understand **OS fundamentals** practically.
+Each program is well-documented and tested to help students understand **OS principles** practically.
 
 ---
 
@@ -11,28 +11,35 @@ Each program is well-documented and tested to help students and developers under
 ```
 OS-Lab/
 │── README.md           # Documentation
-│── Process_Scheduling/
+│── CPU_Scheduling/
 │   │── fcfs.c          # First Come First Serve Scheduling
 │   │── sjf.c           # Shortest Job First Scheduling
 │   │── priority.c      # Priority Scheduling
 │   │── round_robin.c   # Round Robin Scheduling
 │
+│── File_Management/
+│   │── file_operations.c # UNIX file system calls (open, read, write, close, fcntl, seek, stat, opendir, readdir)
+│
+│── Deadlock_Management/
+│   │── bankers_algorithm.c # Banker's Algorithm for Deadlock Avoidance and Prevention
+│
 │── Synchronization/
 │   │── producer_consumer.c  # Producer-Consumer Problem using Semaphores
-│   │── readers_writers.c    # Readers-Writers Problem
-│   │── dining_philosophers.c # Dining Philosophers Problem
+│
+│── Interprocess_Communication/
+│   │── pipes.c         # IPC using Pipes
+│   │── fifos.c         # IPC using FIFOs
+│   │── message_queues.c # IPC using Message Queues
+│   │── shared_memory.c # IPC using Shared Memory
 │
 │── Memory_Management/
 │   │── paging.c        # Implementation of Paging
 │   │── segmentation.c  # Implementation of Segmentation
 │
-│── File_Management/
-│   │── file_creation.c # File creation and writing
-│   │── file_read.c     # Reading from a file
-│
-│── Interprocess_Communication/
-│   │── pipes.c         # IPC using Pipes
-│   │── shared_memory.c # IPC using Shared Memory
+│── Page_Replacement/
+│   │── fcfs_replacement.c  # FCFS Page Replacement Algorithm
+│   │── lru_replacement.c   # Least Recently Used (LRU) Algorithm
+│   │── optimal_replacement.c # Optimal Page Replacement Algorithm
 │
 └── Compilation_Scripts/
     │── compile_all.sh  # Bash script to compile all programs
@@ -45,11 +52,10 @@ OS-Lab/
 ### 🔹 Prerequisites
 Ensure you have the following installed on your system:
 - **GCC Compiler** (For C programs)
-- **G++ Compiler** (For C++ programs)
-- **Make** (Optional, for build automation)
+- **Linux/UNIX-based system** (recommended for system calls execution)
 
 ### 🔹 Compilation & Execution
-To compile any specific program, use:
+To compile a specific program, use:
 ```bash
  gcc filename.c -o outputfile
  ./outputfile
@@ -65,54 +71,35 @@ To compile all programs at once (Linux/macOS):
 ## 📜 Code Explanation
 Below are the key programs included in this repository along with their explanations:
 
-### **1️⃣ Process Scheduling Algorithms**
-- **First Come First Serve (FCFS):**
-  - Implements the simplest CPU scheduling algorithm where the first process in the queue gets executed first.
-  - 📄 [Code](Process_Scheduling/fcfs.c)
+### **1️⃣ CPU Scheduling Algorithms**
+- **First Come First Serve (FCFS)** – Executes the first process in the queue first.
+- **Shortest Job First (SJF)** – Executes the process with the shortest burst time first.
+- **Priority Scheduling** – Assigns priority values to processes.
+- **Round Robin Scheduling** – Uses time quantum for fair CPU allocation.
 
-- **Shortest Job First (SJF):**
-  - Executes the process with the shortest burst time first.
-  - 📄 [Code](Process_Scheduling/sjf.c)
+### **2️⃣ UNIX System Calls for File Management**
+- Demonstrates **open, read, write, close, fcntl, seek, stat, opendir, readdir** system calls.
 
-- **Round Robin Scheduling:**
-  - Assigns a fixed time quantum for each process and cycles through the queue.
-  - 📄 [Code](Process_Scheduling/round_robin.c)
+### **3️⃣ Deadlock Management**
+- **Banker’s Algorithm** – Prevents and avoids deadlocks in resource allocation.
 
-### **2️⃣ Process Synchronization**
-- **Producer-Consumer Problem (Semaphore-Based):**
-  - Uses semaphores to coordinate the producer and consumer threads.
-  - 📄 [Code](Synchronization/producer_consumer.c)
-
-- **Dining Philosophers Problem:**
-  - Prevents deadlock when multiple philosophers try to eat using limited chopsticks.
-  - 📄 [Code](Synchronization/dining_philosophers.c)
-
-### **3️⃣ Memory Management**
-- **Paging:**
-  - Demonstrates memory management using page tables.
-  - 📄 [Code](Memory_Management/paging.c)
-
-- **Segmentation:**
-  - Implements segmentation for memory allocation.
-  - 📄 [Code](Memory_Management/segmentation.c)
-
-### **4️⃣ File Management**
-- **File Creation and Writing:**
-  - Demonstrates opening, writing, and closing a file in C.
-  - 📄 [Code](File_Management/file_creation.c)
-
-- **File Reading:**
-  - Reads and displays content from a file.
-  - 📄 [Code](File_Management/file_read.c)
+### **4️⃣ Process Synchronization**
+- **Producer-Consumer Problem** – Uses semaphores for synchronized data exchange.
 
 ### **5️⃣ Interprocess Communication (IPC)**
-- **Pipes:**
-  - Implements IPC using unnamed pipes to communicate between processes.
-  - 📄 [Code](Interprocess_Communication/pipes.c)
+- **Pipes** – Unidirectional communication between processes.
+- **FIFOs** – Named pipes for IPC.
+- **Message Queues** – Queue-based IPC.
+- **Shared Memory** – Fastest IPC using shared memory segments.
 
-- **Shared Memory:**
-  - Uses `shmget()` and `shmat()` to allocate shared memory between processes.
-  - 📄 [Code](Interprocess_Communication/shared_memory.c)
+### **6️⃣ Memory Management**
+- **Paging** – Implements page-based memory management.
+- **Segmentation** – Implements segment-based memory management.
+
+### **7️⃣ Page Replacement Algorithms**
+- **FCFS Page Replacement** – Replaces the oldest page first.
+- **LRU Page Replacement** – Replaces the least recently used page.
+- **Optimal Page Replacement** – Replaces the page that will not be used for the longest time.
 
 ---
 
@@ -132,10 +119,18 @@ We welcome contributions! Follow these steps:
 
 ---
 
+## 📚 References
+- **Operating System Principles** - Abraham Silberchatz, Peter B. Galvin, Greg Gagne.
+- **Advanced Programming in the UNIX Environment** - W.R. Stevens.
+- **Operating Systems – Internals and Design Principles** - William Stallings.
+- **Modern Operating Systems** - Andrew S. Tanenbaum.
+
+---
+
 ## ⚡ Author
-👤 **[Dudukuru Yuvaraj]**  
+👤 **[Your Name]**  
 📧 Email: dudukuruyuvaraj55@gmail.com  
-🔗 LinkedIn: [Your Profile](https://www.linkedin.com/in/yuvaraj-dudukuru/)
+🔗 LinkedIn: [Yuvaraj](https://linkedin.com/in/yuvaraj-dudukuru)
 
 ---
 
