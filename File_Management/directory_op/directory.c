@@ -22,7 +22,7 @@ int main() {
             printf("Enter directory name to create: ");
             scanf("%s", d);
             // Create directory with permission 0777
-            c = mkdir(d, 0777);
+            c = mkdir(d);
             if (c < 0)
                 perror("Directory not created");
             else
